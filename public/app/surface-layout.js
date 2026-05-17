@@ -3496,8 +3496,14 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
 
           var fromLeft = cell.offsetLeft;
           var fromTop = cell.offsetTop;
-          var slots = [
+          var targetLeft = Math.min(Math.max(fromLeft, 1), 57);
+          var targetTop = Math.min(Math.max(fromTop, 1), 113);
+          var smallSlots = [
+            { left: 1, top: 1 },
+            { left: 57, top: 1 },
             { left: 113, top: 1 },
+            { left: 1, top: 57 },
+            { left: 57, top: 57 },
             { left: 113, top: 57 },
             { left: 1, top: 113 },
             { left: 57, top: 113 },
@@ -3506,6 +3512,12 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
             { left: 57, top: 169 },
             { left: 113, top: 169 }
           ];
+          var slots = smallSlots.filter(function (slot) {
+            return slot.left + 48 <= targetLeft ||
+              slot.left >= targetLeft + 104 ||
+              slot.top + 48 <= targetTop ||
+              slot.top >= targetTop + 104;
+          }).slice(0, 8);
 
           frame.classList.add('is-focus');
           cells.forEach(function (item) {
@@ -3513,6 +3525,8 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
             item.style.animation = 'none';
             item.style.removeProperty('--dot-gallery-origin-left');
             item.style.removeProperty('--dot-gallery-origin-top');
+            item.style.removeProperty('--dot-gallery-target-left');
+            item.style.removeProperty('--dot-gallery-target-top');
           });
 
           var slotIndex = 0;
@@ -3525,6 +3539,8 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
               item.style.top = fromTop + 'px';
               item.style.setProperty('--dot-gallery-origin-left', fromLeft + 'px');
               item.style.setProperty('--dot-gallery-origin-top', fromTop + 'px');
+              item.style.setProperty('--dot-gallery-target-left', targetLeft + 'px');
+              item.style.setProperty('--dot-gallery-target-top', targetTop + 'px');
               void item.offsetWidth;
               item.style.removeProperty('animation');
               item.classList.add('is-selected');
