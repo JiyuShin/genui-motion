@@ -518,17 +518,100 @@
   .detail-stage .dot-music1__icon .dot-music3__noteSvg circle:nth-child(29) { animation-delay: 5.738s, 6.82s; }
   .detail-stage .dot-music1__icon .dot-music3__noteSvg circle:nth-child(34) { animation-delay: 5.756s, 6.84s; }
   .detail-stage .dot-music1__icon .dot-music3__noteSvg circle:nth-child(30) { animation-delay: 5.774s, 6.86s; }
+  .preview-cell .dot-music3__noteSvg circle {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation:
+      dotMusicNoteDotIn 60ms cubic-bezier(0.16, 1, 0.3, 1) both,
+      dotMusicNoteDotLoop 1.8s steps(1, end) infinite;
+  }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(1) { animation-delay: 0.10s, 1.10s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(7) { animation-delay: 0.118s, 1.12s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(2) { animation-delay: 0.136s, 1.14s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(3) { animation-delay: 0.154s, 1.16s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(8) { animation-delay: 0.172s, 1.18s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(13) { animation-delay: 0.190s, 1.20s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(9) { animation-delay: 0.208s, 1.22s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(14) { animation-delay: 0.226s, 1.24s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(4) { animation-delay: 0.244s, 1.26s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(19) { animation-delay: 0.262s, 1.28s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(15) { animation-delay: 0.280s, 1.30s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(10) { animation-delay: 0.298s, 1.32s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(5) { animation-delay: 0.316s, 1.34s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(21) { animation-delay: 0.334s, 1.36s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(25) { animation-delay: 0.352s, 1.38s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(16) { animation-delay: 0.370s, 1.40s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(11) { animation-delay: 0.388s, 1.42s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(6) { animation-delay: 0.406s, 1.44s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(31) { animation-delay: 0.424s, 1.46s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(26) { animation-delay: 0.442s, 1.48s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(23) { animation-delay: 0.460s, 1.50s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(12) { animation-delay: 0.478s, 1.52s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(17) { animation-delay: 0.496s, 1.54s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(32) { animation-delay: 0.514s, 1.56s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(27) { animation-delay: 0.532s, 1.58s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(18) { animation-delay: 0.550s, 1.60s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(20) { animation-delay: 0.568s, 1.62s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(22) { animation-delay: 0.586s, 1.64s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(28) { animation-delay: 0.604s, 1.66s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(33) { animation-delay: 0.622s, 1.68s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(24) { animation-delay: 0.640s, 1.70s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(29) { animation-delay: 0.658s, 1.72s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(34) { animation-delay: 0.676s, 1.74s; }
+  .preview-cell .dot-music3__noteSvg circle:nth-child(30) { animation-delay: 0.694s, 1.76s; }
+  .preview-cell .dot-music1 {
+    width: 340px !important;
+    clip-path: inset(0 172px 0 0 round 32px);
+    animation: dotMusicPreviewReveal 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    will-change: clip-path;
+  }
+  .preview-cell .dot-music1__compact {
+    width: 120px;
+    animation: dotMusicPreviewCompact 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  .preview-cell .dot-music1__expanded {
+    animation: dotMusicPreviewActions 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  .preview-cell .dot-music1__icon {
+    animation: dotMusicPreviewIcon 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__btn {
+    opacity: 0;
+    transform: translateX(14px) scale(0.96);
+    animation:
+      dotMusicButtonIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both,
+      dotMusicButtonLoop 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__btn:nth-child(1) { animation-delay: 0.26s, 1.20s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__btn:nth-child(2) { animation-delay: 0.52s, 1.46s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol span {
+    opacity: 0;
+    transform: translateX(-1px) scale(0.65);
+    animation:
+      dotMusicEqDotIn 95ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
+      dotMusicNoteDotLoop 1.8s steps(1, end) infinite;
+  }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-tall span:nth-child(1) { animation-delay: 0.88s, 1.92s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-tall span:nth-child(2) { animation-delay: 0.92s, 1.96s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-tall span:nth-child(3) { animation-delay: 0.96s, 2.00s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-tall span:nth-child(4) { animation-delay: 1.00s, 2.04s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-tall span:nth-child(5) { animation-delay: 1.04s, 2.08s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-mid span:nth-child(1) { animation-delay: 1.08s, 2.12s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-mid span:nth-child(2) { animation-delay: 1.12s, 2.16s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-mid span:nth-child(3) { animation-delay: 1.16s, 2.20s; }
+  .preview-cell .stage-scale > .dot-music2--actions .dot-music2__eqCol.is-small span:nth-child(1) { animation-delay: 1.20s, 2.24s; }
   .detail-stage .dot-music1__expanded .dot-music2__btnUnit {
     opacity: 1;
     transform: none;
   }
   .detail-stage .dot-music1__expanded .dot-music2__btn {
     opacity: 0;
-    transform: translateX(8px) scale(0.92);
-    animation: dotMusicButtonIn 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateX(14px) scale(0.96);
+    animation: dotMusicButtonIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-music1__expanded .dot-music2__btn:nth-child(1) { animation-delay: 2.96s; }
-  .detail-stage .dot-music1__expanded .dot-music2__btn:nth-child(2) { animation-delay: 3.05s; }
+  .detail-stage .dot-music1__expanded .dot-music2__btn:nth-child(2) { animation-delay: 3.22s; }
   .detail-stage .dot-music1__expanded .dot-music2__eq {
     opacity: 1;
     transform: none;
@@ -615,10 +698,67 @@
       transform: translateX(0) scale(1);
     }
   }
+  @keyframes dotMusicPreviewReveal {
+    0%, 28% { clip-path: inset(0 172px 0 0 round 32px); }
+    42%, 92% { clip-path: inset(0 0 0 0 round 32px); }
+    100% { clip-path: inset(0 172px 0 0 round 32px); }
+  }
+  @keyframes dotMusicPreviewCompact {
+    0%, 26% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    42%, 100% {
+      opacity: 0;
+      transform: translateX(-8px) scale(0.98);
+    }
+  }
+  @keyframes dotMusicPreviewActions {
+    0%, 26% {
+      opacity: 0;
+      transform: translateX(6px);
+    }
+    42%, 68% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    82%, 100% {
+      opacity: 0;
+      transform: translateX(-6px) scale(0.985);
+    }
+  }
+  @keyframes dotMusicPreviewIcon {
+    0%, 68% {
+      opacity: 0;
+      transform: translateX(8px) scale(0.985);
+    }
+    82%, 94% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(4px) scale(0.985);
+    }
+  }
+  @keyframes dotMusicButtonLoop {
+    0%, 14% {
+      opacity: 0;
+      transform: translateX(14px) scale(0.96);
+    }
+    28%, 82% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-4px) scale(0.98);
+    }
+  }
   @keyframes dotMusicButtonIn {
     0% {
       opacity: 0;
-      transform: translateX(8px) scale(0.92);
+      transform: translateX(14px) scale(0.96);
     }
     100% {
       opacity: 1;
