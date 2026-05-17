@@ -3537,6 +3537,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
             item.style.position = 'absolute';
             item.style.width = '48px';
             item.style.height = '48px';
+            item.style.borderRadius = '23.5714px';
             if (index === activeIndex) {
               item.style.left = fromLeft + 'px';
               item.style.top = fromTop + 'px';
@@ -3578,6 +3579,25 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
       // Tile layout: big tile + right column, with dot pagination.
       var imgSrc3 = f3v.img || '/assets/dot-gallery/image-114131.png';
       var imgs3 = Array.isArray(f3v.imgs) ? f3v.imgs : null;
+      if (typeof window !== 'undefined' && !window.__dotGalleryFrame3PreviewLoop) {
+        window.__dotGalleryFrame3PreviewLoop = function (frame) {
+          if (!frame || frame.__dotGalleryFrame3PreviewLoopStarted) return;
+          if (!frame.closest || !frame.closest('.preview-cell')) return;
+          frame.__dotGalleryFrame3PreviewLoopStarted = true;
+          var order = [2, 4, 7, 1, 6, 3, 8, 5, 0];
+          var step = 0;
+          var run = function () {
+            var cells = Array.prototype.slice.call(frame.children).filter(function (item) {
+              return item.classList && item.classList.contains('dot-gcell');
+            });
+            var cell = cells[order[step % order.length]];
+            if (cell && window.__dotGalleryFrame1Focus) window.__dotGalleryFrame1Focus(cell);
+            step += 1;
+          };
+          setTimeout(run, 500);
+          setInterval(run, 1800);
+        };
+      }
       var tile = function (label, isBig, op, src) {
         var useSrc = src || imgSrc3;
         return '' +
@@ -3588,7 +3608,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
           '</div>';
       };
       return '' +
-        '<div class="dot-card dot-gframe3 is-focus" data-state="' + (f3v.state || 'idle') + '">' +
+        '<div class="dot-card dot-gframe3 is-focus" data-state="' + (f3v.state || 'idle') + '" onmouseenter="window.__dotGalleryFrame3PreviewLoop&&window.__dotGalleryFrame3PreviewLoop(this)" onanimationstart="window.__dotGalleryFrame3PreviewLoop&&window.__dotGalleryFrame3PreviewLoop(this)">' +
           tile(labs3[0] || '18', true, '28% 28%', (imgs3 && imgs3[0]) ? imgs3[0] : null) +
             tile(labs3[1] || '19', false, '70% 18%', (imgs3 && imgs3[1]) ? imgs3[1] : null) +
             tile(labs3[2] || '20', false, '82% 35%', (imgs3 && imgs3[2]) ? imgs3[2] : null) +
