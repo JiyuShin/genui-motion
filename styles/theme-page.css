@@ -2266,17 +2266,24 @@
   }
   .dot-gcell__img {
     position: absolute;
-    /* geometry is inline per tile */
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    width: 136% !important;
+    height: 136% !important;
     object-fit: cover;
+    object-position: center;
     filter: saturate(1.05) contrast(1.02);
     display: block;
+    transform: translate(-50%, -50%) scaleX(var(--dot-gallery-img-x, 1)) !important;
   }
   .dot-gcell__shade {
     position: absolute;
-    width: 51.24px;
-    height: 55.34px;
-    left: calc(50% - 51.24px/2 + 0.57px);
-    top: calc(50% - 55.34px/2 + 0.57px);
+    inset: 0;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
     background: rgba(0, 0, 0, 0.28);
   }
   .dot-gcell__label {
@@ -2329,15 +2336,14 @@
     animation: dotGalleryBubble18 680ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-gframe1.is-focus .dot-gcell.is-selected .dot-gcell__img {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    left: 0 !important;
+    left: 50% !important;
     right: auto !important;
-    top: 0 !important;
+    top: 50% !important;
+    width: 136% !important;
+    height: 136% !important;
     object-fit: cover;
     object-position: 28% 28%;
-    transform: none !important;
+    transform: translate(-50%, -50%) scaleX(var(--dot-gallery-img-x, 1)) !important;
     transition: object-position 680ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   .detail-stage .dot-gframe1.is-focus .dot-gcell.is-selected .dot-gcell__shade {

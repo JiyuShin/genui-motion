@@ -3559,7 +3559,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
         var src = (imgs && imgs[i]) ? imgs[i] : imgSrc;
         out += '' +
           '<div class="dot-gcell' + (isToday ? ' is-today' : '') + '" onclick="window.__dotGalleryFrame1Focus&&window.__dotGalleryFrame1Focus(this)" role="button" tabindex="0">' +
-            '<img class="dot-gcell__img" src="' + src + '" alt="" style="' + geom[i] + '" onerror="this.style.display=`none`;" />' +
+            '<img class="dot-gcell__img" src="' + src + '" alt="" style="--dot-gallery-img-x:' + (geom[i].indexOf('transform:scaleX(-1)') !== -1 ? '-1' : '1') + ';" onerror="this.style.display=`none`;" />' +
             '<div class="dot-gcell__shade" aria-hidden="true"></div>' +
             '<div class="dot-gcell__label' + (isToday ? ' is-today' : '') + '">' + label + '</div>' +
           '</div>';
