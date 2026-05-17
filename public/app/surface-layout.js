@@ -3486,13 +3486,63 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
         // 8: image114313
         'width:48.81px;height:86.77px;left:calc(50% - 48.81px/2 + 0.38px);top:calc(50% - 86.77px/2 + 0.91px);'
       ];
-      var out = '<div class="dot-card dot-gframe1" data-state="' + (f1v.state || 'idle') + '" onclick="this.classList.add(&quot;is-focus-18&quot;)" role="button" tabindex="0">';
+      if (typeof window !== 'undefined' && !window.__dotGalleryFrame1Focus) {
+        window.__dotGalleryFrame1Focus = function (cell) {
+          var frame = cell && cell.parentNode;
+          if (!frame || !frame.closest || !frame.closest('.detail-stage')) return;
+          var cells = Array.prototype.slice.call(frame.children);
+          var activeIndex = cells.indexOf(cell);
+          if (activeIndex < 0) return;
+
+          var fromLeft = cell.offsetLeft;
+          var fromTop = cell.offsetTop;
+          var slots = [
+            { left: 113, top: 1 },
+            { left: 113, top: 57 },
+            { left: 1, top: 113 },
+            { left: 57, top: 113 },
+            { left: 113, top: 113 },
+            { left: 1, top: 169 },
+            { left: 57, top: 169 },
+            { left: 113, top: 169 }
+          ];
+
+          frame.classList.add('is-focus');
+          cells.forEach(function (item) {
+            item.classList.remove('is-selected');
+            item.style.animation = 'none';
+            item.style.removeProperty('--dot-gallery-origin-left');
+            item.style.removeProperty('--dot-gallery-origin-top');
+          });
+
+          var slotIndex = 0;
+          cells.forEach(function (item, index) {
+            item.style.position = 'absolute';
+            item.style.width = '48px';
+            item.style.height = '48px';
+            if (index === activeIndex) {
+              item.style.left = fromLeft + 'px';
+              item.style.top = fromTop + 'px';
+              item.style.setProperty('--dot-gallery-origin-left', fromLeft + 'px');
+              item.style.setProperty('--dot-gallery-origin-top', fromTop + 'px');
+              void item.offsetWidth;
+              item.style.removeProperty('animation');
+              item.classList.add('is-selected');
+              return;
+            }
+            var slot = slots[slotIndex++];
+            item.style.left = slot.left + 'px';
+            item.style.top = slot.top + 'px';
+          });
+        };
+      }
+      var out = '<div class="dot-card dot-gframe1" data-state="' + (f1v.state || 'idle') + '">';
       for (var i = 0; i < 9; i++) {
         var label = labs[i] != null ? String(labs[i]) : String(i + 18);
         var isToday = (i === 8);
         var src = (imgs && imgs[i]) ? imgs[i] : imgSrc;
         out += '' +
-          '<div class="dot-gcell' + (isToday ? ' is-today' : '') + '">' +
+          '<div class="dot-gcell' + (isToday ? ' is-today' : '') + '" onclick="window.__dotGalleryFrame1Focus&&window.__dotGalleryFrame1Focus(this)" role="button" tabindex="0">' +
             '<img class="dot-gcell__img" src="' + src + '" alt="" style="' + geom[i] + '" onerror="this.style.display=`none`;" />' +
             '<div class="dot-gcell__shade" aria-hidden="true"></div>' +
             '<div class="dot-gcell__label' + (isToday ? ' is-today' : '') + '">' + label + '</div>' +
