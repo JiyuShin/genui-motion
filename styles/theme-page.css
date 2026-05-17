@@ -1953,6 +1953,148 @@
     color: #FF7F24;
     white-space: nowrap;
   }
+  .dot-w11 .dot-w11__sun,
+  .dot-w21 .dot-w21__sun,
+  .dot-w21 .dot-w21__text {
+    opacity: 0;
+    animation: dotWeatherFadeIn 620ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .dot-w21 .dot-w21__text {
+    animation-delay: 140ms;
+  }
+  .dot-w11 .dot-w11__sun circle,
+  .dot-w21 .dot-w21__sun circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dotWeatherSunSpreadLoop 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite both;
+  }
+  .dot-w11 .dot-w11__sun circle,
+  .dot-w21 .dot-w21__sun circle {
+    animation: dotWeatherSunOuterLoop 1.62s cubic-bezier(0.18, 0.86, 0.24, 1) infinite both !important;
+    animation-delay: 0ms !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(19),
+  .dot-w21 .dot-w21__sun circle:nth-child(19) {
+    animation-name: dotWeatherSunCenterLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(14),
+  .dot-w11 .dot-w11__sun circle:nth-child(18),
+  .dot-w11 .dot-w11__sun circle:nth-child(20),
+  .dot-w11 .dot-w11__sun circle:nth-child(24),
+  .dot-w21 .dot-w21__sun circle:nth-child(14),
+  .dot-w21 .dot-w21__sun circle:nth-child(18),
+  .dot-w21 .dot-w21__sun circle:nth-child(20),
+  .dot-w21 .dot-w21__sun circle:nth-child(24) {
+    animation-name: dotWeatherSunInnerLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(10),
+  .dot-w11 .dot-w11__sun circle:nth-child(13),
+  .dot-w11 .dot-w11__sun circle:nth-child(15),
+  .dot-w11 .dot-w11__sun circle:nth-child(17),
+  .dot-w11 .dot-w11__sun circle:nth-child(21),
+  .dot-w11 .dot-w11__sun circle:nth-child(23),
+  .dot-w11 .dot-w11__sun circle:nth-child(25),
+  .dot-w11 .dot-w11__sun circle:nth-child(28),
+  .dot-w21 .dot-w21__sun circle:nth-child(10),
+  .dot-w21 .dot-w21__sun circle:nth-child(13),
+  .dot-w21 .dot-w21__sun circle:nth-child(15),
+  .dot-w21 .dot-w21__sun circle:nth-child(17),
+  .dot-w21 .dot-w21__sun circle:nth-child(21),
+  .dot-w21 .dot-w21__sun circle:nth-child(23),
+  .dot-w21 .dot-w21__sun circle:nth-child(25),
+  .dot-w21 .dot-w21__sun circle:nth-child(28) {
+    animation-name: dotWeatherSunMidLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(9),
+  .dot-w11 .dot-w11__sun circle:nth-child(11),
+  .dot-w11 .dot-w11__sun circle:nth-child(12),
+  .dot-w11 .dot-w11__sun circle:nth-child(16),
+  .dot-w11 .dot-w11__sun circle:nth-child(22),
+  .dot-w11 .dot-w11__sun circle:nth-child(26),
+  .dot-w11 .dot-w11__sun circle:nth-child(27),
+  .dot-w11 .dot-w11__sun circle:nth-child(29),
+  .dot-w21 .dot-w21__sun circle:nth-child(9),
+  .dot-w21 .dot-w21__sun circle:nth-child(11),
+  .dot-w21 .dot-w21__sun circle:nth-child(12),
+  .dot-w21 .dot-w21__sun circle:nth-child(16),
+  .dot-w21 .dot-w21__sun circle:nth-child(22),
+  .dot-w21 .dot-w21__sun circle:nth-child(26),
+  .dot-w21 .dot-w21__sun circle:nth-child(27),
+  .dot-w21 .dot-w21__sun circle:nth-child(29) {
+    animation-name: dotWeatherSunNearOuterLoop !important;
+  }
+  @keyframes dotWeatherFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(4px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes dotWeatherSunSpread {
+    0% {
+      opacity: 0;
+      transform: scale(0.18);
+    }
+    58% {
+      opacity: 1;
+      transform: scale(1.24);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes dotWeatherSunSpreadLoop {
+    0%, 26% {
+      opacity: 0;
+      transform: scale(0.18);
+    }
+    44% {
+      opacity: 1;
+      transform: scale(1.24);
+    }
+    56%, 82% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.18);
+    }
+  }
+  @keyframes dotWeatherSunCenterLoop {
+    0%, 2% { opacity: 0; transform: scale(0.5); }
+    9% { opacity: 1; transform: scale(1.08); }
+    16%, 92% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunInnerLoop {
+    0%, 6% { opacity: 0; transform: scale(0.5); }
+    13% { opacity: 1; transform: scale(1.075); }
+    20%, 88% { opacity: 1; transform: scale(1); }
+    96%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunMidLoop {
+    0%, 10% { opacity: 0; transform: scale(0.5); }
+    17% { opacity: 1; transform: scale(1.06); }
+    24%, 84% { opacity: 1; transform: scale(1); }
+    92%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunNearOuterLoop {
+    0%, 14% { opacity: 0; transform: scale(0.5); }
+    21% { opacity: 1; transform: scale(1.045); }
+    28%, 80% { opacity: 1; transform: scale(1); }
+    88%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunOuterLoop {
+    0%, 18% { opacity: 0; transform: scale(0.5); }
+    25% { opacity: 1; transform: scale(1.035); }
+    32%, 76% { opacity: 1; transform: scale(1); }
+    84%, 100% { opacity: 0; transform: scale(0.56); }
+  }
 
   /* Run Panel Animation */
   .run-panel {
