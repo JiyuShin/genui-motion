@@ -1360,11 +1360,11 @@
   .detail-stage .dot-sch22 {
     width: 340px;
     clip-path: inset(0 172px 0 0 round 32px);
-    animation: dotScheduleReveal 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: dotScheduleReveal 7.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     will-change: clip-path;
   }
   .detail-stage .dot-sch22__compact {
-    animation: dotScheduleCompactOut 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: dotScheduleCompactOut 7.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-sch22__expanded {
     opacity: 1;
@@ -1373,10 +1373,10 @@
     animation: dotScheduleRowOut 360ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
     will-change: opacity, transform;
   }
-  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(1) { animation-delay: 1.48s; }
-  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(2) { animation-delay: 1.54s; }
-  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(3) { animation-delay: 1.60s; }
-  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(4) { animation-delay: 1.66s; }
+  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(1) { animation-delay: 7.08s; }
+  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(2) { animation-delay: 7.12s; }
+  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(3) { animation-delay: 7.16s; }
+  .detail-stage .dot-sch22__compact .dot-sch__row:nth-child(4) { animation-delay: 7.20s; }
   .detail-stage .dot-sch22__expanded .dot-sch__date,
   .detail-stage .dot-sch22__expanded .dot-sch__row {
     opacity: 0;
@@ -1385,15 +1385,15 @@
   }
   .detail-stage .dot-sch22__expanded .dot-sch__date {
     animation: dotScheduleRowIn 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.88s;
+    animation-delay: 7.28s;
   }
   .detail-stage .dot-sch22__expanded .dot-sch__row {
     animation: dotScheduleRowIn 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(1) { animation-delay: 2.00s; }
-  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(2) { animation-delay: 2.12s; }
-  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(3) { animation-delay: 2.24s; }
-  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(4) { animation-delay: 2.36s; }
+  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(1) { animation-delay: 7.36s; }
+  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(2) { animation-delay: 7.44s; }
+  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(3) { animation-delay: 7.52s; }
+  .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(4) { animation-delay: 7.60s; }
   .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(3) .dot-sch__bullet,
   .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(4) .dot-sch__bullet {
     background: #303030;
@@ -1409,51 +1409,100 @@
     animation:
       dotScheduleBulletAccent 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
       dotScheduleAccentPulse 1.4s ease-in-out infinite;
-    animation-delay: 2.82s;
+    animation-delay: 7.80s;
   }
   .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(3) .dot-sch__text {
     animation:
       dotScheduleTextAccent 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
       dotScheduleAccentTextPulse 1.4s ease-in-out infinite;
-    animation-delay: 2.82s;
+    animation-delay: 7.80s;
   }
   .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(4) .dot-sch__text,
   .detail-stage .dot-sch22__expanded .dot-sch__row:nth-child(4) .dot-sch__time {
     animation: dotScheduleTextStrong 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 3.02s;
+    animation-delay: 7.92s;
   }
   .detail-stage .dot-sch22__compact .dot-sch__date {
-    animation: dotScheduleDateOut 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 1.72s;
+    background-image: linear-gradient(90deg, #FF7F24 0%, #FFC69E 12.5%, #FEC868 25%, #FFC69E 37.5%, #FF7F24 50%, #FFC69E 62.5%, #FEC868 75%, #FFC69E 87.5%, #FF7F24 100%);
+    background-size: 420% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #FF7F24;
+    animation:
+      dotScheduleDateTextureIn 760ms cubic-bezier(0.16, 1, 0.3, 1) 3s forwards,
+      dotScheduleDateGradientFlow 5.6s linear 3s infinite,
+      dotScheduleDateOut 300ms cubic-bezier(0.16, 1, 0.3, 1) 7.22s forwards;
+  }
+  .detail-stage .dot-sch22__compact .dot-sch__list .dot-sch__text {
+    background-image:
+      linear-gradient(90deg, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 0%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 12.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 25%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 37.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 50%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 62.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 75%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 87.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 100%);
+    background-size: 420% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:
+      dotScheduleTextGradientIn 460ms cubic-bezier(0.16, 1, 0.3, 1) 3s forwards,
+      dotScheduleTextGradientFlow 5.6s linear 3s infinite;
+  }
+  .detail-stage .dot-sch22__compact .dot-sch__list .dot-sch__text.is-strong {
+    --dot-sch-gradient-from: rgba(255, 255, 255, 1);
+    --dot-sch-gradient-to: rgba(255, 255, 255, 0.7);
+  }
+  .detail-stage .dot-sch22__compact .dot-sch__list .dot-sch__text.is-muted {
+    --dot-sch-gradient-from: rgba(255, 255, 255, 0.7);
+    --dot-sch-gradient-to: rgba(255, 255, 255, 0.3);
+  }
+  .detail-stage .dot-sch22__compact .dot-sch__list .dot-sch__text.is-muted {
+    opacity: 1;
+  }
+  .detail-stage .dot-sch22__compact .dot-sch__text::after {
+    content: none;
+  }
+  .preview-cell .dot-sch22__compact .dot-sch__text.is-strong {
+    --dot-sch-gradient-from: rgba(255, 255, 255, 1);
+    --dot-sch-gradient-to: rgba(255, 255, 255, 0.7);
+  }
+  .preview-cell .dot-sch22__compact .dot-sch__text.is-muted {
+    --dot-sch-gradient-from: rgba(255, 255, 255, 0.7);
+    --dot-sch-gradient-to: rgba(255, 255, 255, 0.3);
   }
   .preview-cell .dot-sch22 {
     width: 340px !important;
     clip-path: inset(0 172px 0 0 round 32px);
-    animation: dotSchedulePreviewReveal 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation: dotSchedulePreviewReveal 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
     will-change: clip-path;
   }
   .preview-cell .dot-sch22__compact {
-    animation: dotSchedulePreviewCompact 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation: dotSchedulePreviewCompact 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   }
   .preview-cell .dot-sch22__compact .dot-sch__row {
-    animation: dotSchedulePreviewRowOut 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation: dotSchedulePreviewRowOut 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   }
   .preview-cell .dot-sch22__compact .dot-sch__row:nth-child(1) { animation-delay: 0s; }
   .preview-cell .dot-sch22__compact .dot-sch__row:nth-child(2) { animation-delay: 0.04s; }
   .preview-cell .dot-sch22__compact .dot-sch__row:nth-child(3) { animation-delay: 0.08s; }
   .preview-cell .dot-sch22__compact .dot-sch__row:nth-child(4) { animation-delay: 0.12s; }
   .preview-cell .dot-sch22__compact .dot-sch__date {
-    animation: dotSchedulePreviewDateOut 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    background-image: linear-gradient(90deg, #FF7F24 0%, #FFC69E 12.5%, #FEC868 25%, #FFC69E 37.5%, #FF7F24 50%, #FFC69E 62.5%, #FEC868 75%, #FFC69E 87.5%, #FF7F24 100%);
+    background-size: 420% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #FF7F24;
+    animation:
+      dotSchedulePreviewDateTexture 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite,
+      dotScheduleDateGradientFlow 5.6s linear infinite;
   }
   .preview-cell .dot-sch22__expanded {
     opacity: 1;
-    animation: dotSchedulePreviewExpanded 7.2s linear infinite;
+    animation: dotSchedulePreviewExpanded 7.4s linear infinite;
   }
   .preview-cell .dot-sch22__expanded .dot-sch__date,
   .preview-cell .dot-sch22__expanded .dot-sch__row {
     opacity: 0;
     transform: translateX(18px);
-    animation: dotSchedulePreviewRowIn 7.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation: dotSchedulePreviewRowIn 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   }
   .preview-cell .dot-sch22__expanded .dot-sch__date { animation-delay: 0s; }
   .preview-cell .dot-sch22__expanded .dot-sch__row:nth-child(1) { animation-delay: 0.12s; }
@@ -1472,14 +1521,31 @@
     color: rgba(255, 255, 255, 0.8);
   }
   .preview-cell .dot-sch22__expanded .dot-sch__row:nth-child(3) .dot-sch__bullet {
-    animation: dotScheduleBulletAccentLoop 7.2s ease-in-out infinite;
+    animation: dotScheduleBulletAccentLoop 7.4s ease-in-out infinite;
   }
   .preview-cell .dot-sch22__expanded .dot-sch__row:nth-child(3) .dot-sch__text {
-    animation: dotScheduleTextAccentLoop 7.2s ease-in-out infinite;
+    animation: dotScheduleTextAccentLoop 7.4s ease-in-out infinite;
   }
   .preview-cell .dot-sch22__expanded .dot-sch__row:nth-child(4) .dot-sch__text,
   .preview-cell .dot-sch22__expanded .dot-sch__row:nth-child(4) .dot-sch__time {
-    animation: dotScheduleTextStrongLoop 7.2s ease-in-out infinite;
+    animation: dotScheduleTextStrongLoop 7.4s ease-in-out infinite;
+  }
+  .preview-cell .dot-sch22__compact .dot-sch__list .dot-sch__text {
+    background-image:
+      linear-gradient(90deg, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 0%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 12.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 25%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 37.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 50%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 62.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 75%, var(--dot-sch-gradient-to, rgba(255, 255, 255, 0.3)) 87.5%, var(--dot-sch-gradient-from, rgba(255, 255, 255, 0.7)) 100%);
+    background-size: 420% 100%;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation:
+      dotSchedulePreviewTextGradient 7.4s cubic-bezier(0.16, 1, 0.3, 1) infinite,
+      dotScheduleTextGradientFlow 5.6s linear infinite;
+  }
+  .preview-cell .dot-sch22__compact .dot-sch__list .dot-sch__text.is-muted {
+    opacity: 1;
+  }
+  .preview-cell .dot-sch22__compact .dot-sch__text::after {
+    content: none;
   }
   .preview-cell .dot-sch42 .dot-sch__date,
   .preview-cell .dot-sch42 .dot-sch__row {
@@ -1566,6 +1632,8 @@
   .dot-sch__bullet.is-accent { background: #FF7F24; }
 
   .dot-sch__text {
+    position: relative;
+    display: inline-block;
     font-family: 'Pretendard', var(--font), -apple-system, BlinkMacSystemFont, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -1594,17 +1662,18 @@
   .dot-sch__time.is-time { color: rgba(255, 255, 255, 0.8); }
   .dot-sch__time.is-strong { color: #FFFFFF; }
   @keyframes dotScheduleReveal {
-    0%, 52% { clip-path: inset(0 172px 0 0 round 32px); }
+    0%, 73% { clip-path: inset(0 172px 0 0 round 32px); }
+    88% { clip-path: inset(0 24px 0 0 round 32px); }
     100% { clip-path: inset(0 0 0 0 round 32px); }
   }
   @keyframes dotScheduleCompactOut {
-    0%, 60% {
+    0%, 74% {
       opacity: 1;
       transform: translateX(0) scale(1);
     }
     100% {
       opacity: 0;
-      transform: translateX(-8px) scale(0.98);
+      transform: translateX(-6px) scale(0.992);
     }
   }
   @keyframes dotScheduleDateOut {
@@ -1624,13 +1693,13 @@
     }
     100% {
       opacity: 0;
-      transform: translateX(-14px);
+      transform: translateX(-8px);
     }
   }
   @keyframes dotScheduleRowIn {
     0% {
       opacity: 0;
-      transform: translateX(18px);
+      transform: translateX(10px);
     }
     100% {
       opacity: 1;
@@ -1657,19 +1726,52 @@
     from { color: rgba(255, 255, 255, 0.8); }
     to { color: #FFFFFF; }
   }
+  @keyframes dotScheduleDateTextureIn {
+    from {
+      color: #FF7F24;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: #FF7F24;
+    }
+    to {
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  @keyframes dotScheduleDateGradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  @keyframes dotScheduleTextGradientIn {
+    from {
+      -webkit-text-fill-color: var(--dot-sch-gradient-from, currentColor);
+      color: var(--dot-sch-gradient-from, currentColor);
+    }
+    to {
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+  @keyframes dotScheduleTextGradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
   @keyframes dotSchedulePreviewReveal {
-    0%, 18% { clip-path: inset(0 172px 0 0 round 32px); }
-    32%, 88% { clip-path: inset(0 0 0 0 round 32px); }
+    0%, 62% { clip-path: inset(0 172px 0 0 round 32px); }
+    72% { clip-path: inset(0 24px 0 0 round 32px); }
+    78%, 90% { clip-path: inset(0 0 0 0 round 32px); }
     100% { clip-path: inset(0 172px 0 0 round 32px); }
   }
   @keyframes dotSchedulePreviewCompact {
-    0%, 17% {
+    0%, 61% {
       opacity: 1;
       transform: translateX(0) scale(1);
     }
-    30%, 86% {
+    73%, 88% {
       opacity: 0;
-      transform: translateX(-8px) scale(0.98);
+      transform: translateX(-6px) scale(0.992);
     }
     94%, 100% {
       opacity: 1;
@@ -1677,25 +1779,11 @@
     }
   }
   @keyframes dotSchedulePreviewRowOut {
-    0%, 18% {
+    0%, 62% {
       opacity: 1;
       transform: translateX(0);
     }
-    28%, 86% {
-      opacity: 0;
-      transform: translateX(-14px);
-    }
-    94%, 100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes dotSchedulePreviewDateOut {
-    0%, 22% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    30%, 86% {
+    72%, 88% {
       opacity: 0;
       transform: translateX(-8px);
     }
@@ -1704,22 +1792,74 @@
       transform: translateX(0);
     }
   }
+  @keyframes dotSchedulePreviewDateOut {
+    0%, 63% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    73%, 88% {
+      opacity: 0;
+      transform: translateX(-6px);
+    }
+    94%, 100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
   @keyframes dotSchedulePreviewExpanded {
-    0%, 18%, 92%, 100% { opacity: 0; }
-    32%, 86% { opacity: 1; }
+    0%, 66%, 94%, 100% { opacity: 0; }
+    78%, 90% { opacity: 1; }
   }
   @keyframes dotSchedulePreviewRowIn {
-    0%, 28% {
+    0%, 68% {
       opacity: 0;
-      transform: translateX(18px);
+      transform: translateX(10px);
     }
-    38%, 84% {
+    78%, 90% {
       opacity: 1;
       transform: translateX(0);
     }
     90%, 100% {
       opacity: 0;
       transform: translateX(-6px);
+    }
+  }
+  @keyframes dotSchedulePreviewDateTexture {
+    0%, 28% {
+      color: #FF7F24;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: #FF7F24;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    34%, 63% {
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    73%, 88% {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    94%, 100% {
+      opacity: 1;
+      transform: translateX(0);
+      -webkit-text-fill-color: #FF7F24;
+      color: #FF7F24;
+    }
+  }
+  @keyframes dotSchedulePreviewTextGradient {
+    0%, 28%, 88%, 100% {
+      -webkit-text-fill-color: var(--dot-sch-gradient-from, currentColor);
+      color: var(--dot-sch-gradient-from, currentColor);
+    }
+    34%, 63% {
+      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
   }
   @keyframes dotScheduleStandaloneRowIn {

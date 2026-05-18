@@ -4042,9 +4042,9 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
       var sv = (comp && comp.variant) || {};
       var date = sv.date || '13 May';
       var items = Array.isArray(sv.items) ? sv.items : [
-        { text: 'Wild Life', tone: 'muted' },
+        { text: 'Wild Life', tone: 'strong' },
         { text: 'Blue Mountains', tone: 'muted' },
-        { text: 'Darling Harbour', tone: 'accent' },
+        { text: 'Darling Harbour', tone: 'muted' },
         { text: 'Opera House', tone: 'muted' }
       ];
       while (items.length < 4) items.push({ text: 'Schedule item', tone: 'muted' });
@@ -4055,7 +4055,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
         return '' +
           '<div class="dot-sch__row">' +
             '<span class="dot-sch__bullet ' + bulletClass + '" aria-hidden="true"></span>' +
-            '<span class="dot-sch__text ' + textClass + '">' + (it.text || '') + '</span>' +
+            '<span class="dot-sch__text ' + textClass + '" data-text="' + (it.text || '') + '">' + (it.text || '') + '</span>' +
           '</div>';
       };
       var expandedItems = Array.isArray(sv.expandedItems) ? sv.expandedItems : [
@@ -4067,7 +4067,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
       var expandedHtml = window.renderAtomicForRole({
         role: 'dot-schedule-4x2',
         variant: {
-          date: sv.expandedDate || 'May 15',
+          date: sv.expandedDate || '13 May',
           items: expandedItems
         }
       }, rect);

@@ -170,10 +170,11 @@
       role: 'dot-schedule-2x2',
       variant: {
         date: '13 May',
+        expandedDate: '13 May',
         items: [
-          { text: 'Wild Life', tone: 'muted' },
+          { text: 'Wild Life', tone: 'strong' },
           { text: 'Blue Mountains', tone: 'muted' },
-          { text: 'Darling Harbour', tone: 'accent' },
+          { text: 'Darling Harbour', tone: 'muted' },
           { text: 'Opera House', tone: 'muted' }
         ]
       }
