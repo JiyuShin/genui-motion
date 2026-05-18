@@ -2022,6 +2022,61 @@
   .dot-w21 .dot-w21__sun circle:nth-child(29) {
     animation-name: dotWeatherSunNearOuterLoop !important;
   }
+  .dot-w11 .dot-w11__sun circle,
+  .dot-w21 .dot-w21__sun circle {
+    animation: dotWeatherSunOuterHoldLoop 6.7s cubic-bezier(0.18, 0.86, 0.24, 1) infinite both !important;
+    animation-delay: 0ms !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(19),
+  .dot-w21 .dot-w21__sun circle:nth-child(19) {
+    animation-name: dotWeatherSunCenterHoldLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(14),
+  .dot-w11 .dot-w11__sun circle:nth-child(18),
+  .dot-w11 .dot-w11__sun circle:nth-child(20),
+  .dot-w11 .dot-w11__sun circle:nth-child(24),
+  .dot-w21 .dot-w21__sun circle:nth-child(14),
+  .dot-w21 .dot-w21__sun circle:nth-child(18),
+  .dot-w21 .dot-w21__sun circle:nth-child(20),
+  .dot-w21 .dot-w21__sun circle:nth-child(24) {
+    animation-name: dotWeatherSunInnerHoldLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(10),
+  .dot-w11 .dot-w11__sun circle:nth-child(13),
+  .dot-w11 .dot-w11__sun circle:nth-child(15),
+  .dot-w11 .dot-w11__sun circle:nth-child(17),
+  .dot-w11 .dot-w11__sun circle:nth-child(21),
+  .dot-w11 .dot-w11__sun circle:nth-child(23),
+  .dot-w11 .dot-w11__sun circle:nth-child(25),
+  .dot-w11 .dot-w11__sun circle:nth-child(28),
+  .dot-w21 .dot-w21__sun circle:nth-child(10),
+  .dot-w21 .dot-w21__sun circle:nth-child(13),
+  .dot-w21 .dot-w21__sun circle:nth-child(15),
+  .dot-w21 .dot-w21__sun circle:nth-child(17),
+  .dot-w21 .dot-w21__sun circle:nth-child(21),
+  .dot-w21 .dot-w21__sun circle:nth-child(23),
+  .dot-w21 .dot-w21__sun circle:nth-child(25),
+  .dot-w21 .dot-w21__sun circle:nth-child(28) {
+    animation-name: dotWeatherSunMidHoldLoop !important;
+  }
+  .dot-w11 .dot-w11__sun circle:nth-child(9),
+  .dot-w11 .dot-w11__sun circle:nth-child(11),
+  .dot-w11 .dot-w11__sun circle:nth-child(12),
+  .dot-w11 .dot-w11__sun circle:nth-child(16),
+  .dot-w11 .dot-w11__sun circle:nth-child(22),
+  .dot-w11 .dot-w11__sun circle:nth-child(26),
+  .dot-w11 .dot-w11__sun circle:nth-child(27),
+  .dot-w11 .dot-w11__sun circle:nth-child(29),
+  .dot-w21 .dot-w21__sun circle:nth-child(9),
+  .dot-w21 .dot-w21__sun circle:nth-child(11),
+  .dot-w21 .dot-w21__sun circle:nth-child(12),
+  .dot-w21 .dot-w21__sun circle:nth-child(16),
+  .dot-w21 .dot-w21__sun circle:nth-child(22),
+  .dot-w21 .dot-w21__sun circle:nth-child(26),
+  .dot-w21 .dot-w21__sun circle:nth-child(27),
+  .dot-w21 .dot-w21__sun circle:nth-child(29) {
+    animation-name: dotWeatherSunNearOuterHoldLoop !important;
+  }
   @keyframes dotWeatherFadeIn {
     0% {
       opacity: 0;
@@ -2093,6 +2148,36 @@
     25% { opacity: 1; transform: scale(1.035); }
     32%, 76% { opacity: 1; transform: scale(1); }
     84%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunCenterHoldLoop {
+    0%, 0.5% { opacity: 0; transform: scale(0.5); }
+    2.2% { opacity: 1; transform: scale(1.08); }
+    3.9%, 86.2% { opacity: 1; transform: scale(1); }
+    88.2%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunInnerHoldLoop {
+    0%, 1.5% { opacity: 0; transform: scale(0.5); }
+    3.1% { opacity: 1; transform: scale(1.075); }
+    4.8%, 85.2% { opacity: 1; transform: scale(1); }
+    87.2%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunMidHoldLoop {
+    0%, 2.4% { opacity: 0; transform: scale(0.5); }
+    4.1% { opacity: 1; transform: scale(1.06); }
+    5.8%, 84.3% { opacity: 1; transform: scale(1); }
+    86.2%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunNearOuterHoldLoop {
+    0%, 3.4% { opacity: 0; transform: scale(0.5); }
+    5.1% { opacity: 1; transform: scale(1.045); }
+    6.8%, 83.3% { opacity: 1; transform: scale(1); }
+    85.2%, 100% { opacity: 0; transform: scale(0.56); }
+  }
+  @keyframes dotWeatherSunOuterHoldLoop {
+    0%, 4.3% { opacity: 0; transform: scale(0.5); }
+    6% { opacity: 1; transform: scale(1.035); }
+    7.7%, 82.4% { opacity: 1; transform: scale(1); }
+    84.3%, 100% { opacity: 0; transform: scale(0.56); }
   }
 
   /* Run Panel Animation */
