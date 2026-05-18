@@ -4059,10 +4059,10 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
           '</div>';
       };
       var expandedItems = Array.isArray(sv.expandedItems) ? sv.expandedItems : [
-        { text: 'Design standup', time: '10:00', tone: 'muted' },
-        { text: 'Coffee w/ Sarah', time: '14:00', tone: 'muted' },
-        { text: 'Run 5km', time: '18:30', tone: 'accent' },
-        { text: 'Dinner reservation', time: '20:00', tone: 'strong' }
+        { text: 'Darling Harbour', time: '9:00', note: 'Need to arrive until', tone: 'strong' },
+        { text: 'Wild Life', time: '10:00', tone: 'muted' },
+        { text: 'Blue Mountains', time: '14:00', tone: 'muted' },
+        { text: 'Opera House', time: '18:30', tone: 'muted' }
       ];
       var expandedHtml = window.renderAtomicForRole({
         role: 'dot-schedule-4x2',
@@ -4098,10 +4098,12 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
         var bulletClass = tone === 'accent' ? 'is-accent' : 'is-dark';
         var textClass = tone === 'accent' ? 'is-accent' : (tone === 'strong' ? 'is-strong' : 'is-muted');
         var timeClass = tone === 'strong' ? 'is-strong' : 'is-time';
+        var noteHtml = it.note ? '<span class="dot-sch__time-note">' + it.note + '</span>' : '';
         return '' +
-          '<div class="dot-sch__row dot-sch__row--wide">' +
+          '<div class="dot-sch__row dot-sch__row--wide' + (it.note ? ' dot-sch__row--has-note' : '') + '">' +
             '<span class="dot-sch__bullet ' + bulletClass + '" aria-hidden="true"></span>' +
             '<span class="dot-sch__text ' + textClass + '">' + (it.text || '') + '</span>' +
+            noteHtml +
             '<span class="dot-sch__time ' + timeClass + '">' + (it.time || '') + '</span>' +
           '</div>';
       };
