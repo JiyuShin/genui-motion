@@ -3043,7 +3043,7 @@
     to { opacity: 1; }
   }
 
-  /* Camera (dot) (164×246) */
+  /* Camera (dot) shell: preserves the 1 -> 2 -> main UI detail motion. */
   .dot-cam {
     width: 164px;
     height: 246px;
@@ -3052,42 +3052,160 @@
     border-radius: 32px;
     overflow: hidden;
   }
-  .dot-cam__img {
+  .dot-cam__intro {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Match reference: keep subject/face in view (less lower-body crop) */
-    object-position: 50% 18%;
-  }
-  .dot-cam__fade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
+    opacity: 0;
+    z-index: 5;
   }
-  .dot-cam__shutter {
+  .dot-cam__introIcon {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+  .detail-stage .dot-cam {
+    width: 82px;
+    height: 82px;
+    background: #FF7F24;
+    border-radius: 99px;
+    animation: dotCameraDetailShell 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: width, height, border-radius, background;
+  }
+  .detail-stage .dot-cam__intro {
+    opacity: 1;
+    animation: dotCameraIntroOut 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes dotCameraDetailShell {
+    0%, 42% {
+      width: 82px;
+      height: 82px;
+      border-radius: 99px;
+      background: #FF7F24;
+    }
+    50% {
+      width: 120px;
+      height: 120px;
+      border-radius: 32px;
+      background: #FF7F24;
+    }
+    79% {
+      width: 120px;
+      height: 120px;
+      border-radius: 32px;
+      background: #FF7F24;
+    }
+    100% {
+      width: 168px;
+      height: 340px;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  @keyframes dotCameraIntroOut {
+    0%, 79% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    91%, 100% {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+  }
+  @keyframes dotCameraWidgetIn {
+    0%, 81% {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Camera_widget_key-color-ver. */
+  .camera-widget-key-color-ver {
+    position: absolute;
+    width: 168px;
+    height: 340px;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    overflow: hidden;
+    opacity: 1;
+  }
+  .detail-stage .camera-widget-key-color-ver {
+    opacity: 0;
+    z-index: 10;
+    isolation: isolate;
+    animation: dotCameraWidgetIn 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .camera-widget__img {
+    position: absolute;
+    width: 168px;
+    height: 340px;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .camera-widget__bg-gradient {
+    position: absolute;
+    width: 168px;
+    height: 340px;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.6) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+  }
+  .camera-widget__shot-button {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: calc(50% - 48px/2);
+    bottom: 20px;
+  }
+  .camera-widget__shot-button-graphic {
     box-sizing: border-box;
     position: absolute;
     width: 48px;
     height: 48px;
     left: calc(50% - 48px/2);
-    top: 178px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 0.375px solid #FFFFFF;
+    top: 0;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 127, 36, 0.6) 0%, rgba(255, 127, 36, 0.8) 100%);
+    border: 0.25px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-radius: 999px;
   }
-  .dot-cam__expand {
+  .camera-widget__expand-button {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    right: 20px;
+    bottom: 24px;
+  }
+  .camera-widget__expand-icon {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 116px;
-    top: 193px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: calc(50% - 24px/2);
+    top: calc(50% - 24px/2);
+  }
+  .camera-widget__vector {
+    position: absolute;
+    left: 8.33%;
+    right: 8.33%;
+    top: 8.33%;
+    bottom: 8.33%;
+    background: #FFFFFF;
+    clip-path: polygon(0 0, 40% 0, 40% 10%, 10% 10%, 10% 40%, 0 40%, 0 0, 60% 0, 100% 0, 100% 40%, 90% 40%, 90% 10%, 60% 10%, 60% 0, 0 60%, 10% 60%, 10% 90%, 40% 90%, 40% 100%, 0 100%, 0 60%, 60% 90%, 90% 90%, 90% 60%, 100% 60%, 100% 100%, 60% 100%);
   }
 
   header {

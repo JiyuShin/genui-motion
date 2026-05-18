@@ -3630,17 +3630,26 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
     case 'dot-camera': {
       var camv = (comp && comp.variant) || {};
       var img = camv.img || '';
-      var imgHtml = img ? '<img class="dot-cam__img" src="' + img + '" alt="" />' : '';
+      var imgBg = img ? 'background-image:url(\'' + img + '\');' : '';
       return '' +
-        '<div class="dot-card dot-cam" data-state="' + (camv.state || 'idle') + '">' +
-          imgHtml +
-          '<div class="dot-cam__fade" aria-hidden="true"></div>' +
-          '<div class="dot-cam__shutter" aria-hidden="true"></div>' +
-          '<div class="dot-cam__expand" aria-hidden="true">' +
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-              '<path d="M15 3h6v6h-2V6.41l-4.29 4.3-1.42-1.42L17.59 5H15V3Z" fill="#FFFFFF"/>' +
-              '<path d="M9 21H3v-6h2v3.59l4.29-4.3 1.42 1.42L6.41 19H9v2Z" fill="#FFFFFF"/>' +
+        '<div class="dot-cam" data-state="' + (camv.state || 'idle') + '">' +
+          '<div class="dot-cam__intro" aria-hidden="true">' +
+            '<svg class="dot-cam__introIcon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+              '<path d="M6.66667 28C5.93333 28 5.30556 27.7389 4.78333 27.2167C4.26111 26.6944 4 26.0667 4 25.3333V20H6.66667V25.3333H12V28H6.66667ZM20 28V25.3333H25.3333V20H28V25.3333C28 26.0667 27.7389 26.6944 27.2167 27.2167C26.6944 27.7389 26.0667 28 25.3333 28H20ZM4 12V6.66667C4 5.93333 4.26111 5.30556 4.78333 4.78333C5.30556 4.26111 5.93333 4 6.66667 4H12V6.66667H6.66667V12H4ZM25.3333 12V6.66667H20V4H25.3333C26.0667 4 26.6944 4.26111 27.2167 4.78333C27.7389 5.30556 28 5.93333 28 6.66667V12H25.3333Z" fill="#1A1D1C"/>' +
+              '<path fill-rule="evenodd" clip-rule="evenodd" d="M16.0003 18.667C17.4731 18.667 18.667 17.4731 18.667 16.0003C18.667 14.5276 17.4731 13.3337 16.0003 13.3337C14.5276 13.3337 13.3337 14.5276 13.3337 16.0003C13.3337 17.4731 14.5276 18.667 16.0003 18.667ZM16.0003 21.3337C18.9458 21.3337 21.3337 18.9458 21.3337 16.0003C21.3337 13.0548 18.9458 10.667 16.0003 10.667C13.0548 10.667 10.667 13.0548 10.667 16.0003C10.667 18.9458 13.0548 21.3337 16.0003 21.3337Z" fill="#1A1D1C"/>' +
             '</svg>' +
+          '</div>' +
+          '<div class="camera-widget-key-color-ver" aria-hidden="true" style="position:absolute;width:168px;height:340px;left:0;top:0;background:rgba(255,255,255,0.2);border-radius:32px;overflow:hidden;isolation:isolate;z-index:10;">' +
+            '<div class="camera-widget__img" style="position:absolute;width:168px;height:340px;left:0;top:0;' + imgBg + 'background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;"></div>' +
+            '<div class="camera-widget__bg-gradient" style="position:absolute;width:168px;height:340px;left:0;top:0;background:linear-gradient(180deg,rgba(0,0,0,0) 70%,rgba(0,0,0,0.6) 100%);backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);z-index:1;"></div>' +
+            '<div class="camera-widget__shot-button" style="position:absolute;width:48px;height:48px;left:calc(50% - 48px/2);bottom:20px;z-index:2;">' +
+              '<div class="camera-widget__shot-button-graphic" style="box-sizing:border-box;position:absolute;width:48px;height:48px;left:calc(50% - 48px/2);top:0;background:radial-gradient(50% 50% at 50% 50%,rgba(255,127,36,0.6) 0%,rgba(255,127,36,0.8) 100%);border:0.25px solid rgba(255,255,255,0.2);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;"></div>' +
+            '</div>' +
+            '<div class="camera-widget__expand-button" style="position:absolute;width:36px;height:36px;right:20px;bottom:24px;z-index:2;">' +
+              '<div class="camera-widget__expand-icon" style="position:absolute;width:24px;height:24px;left:calc(50% - 24px/2);top:calc(50% - 24px/2);">' +
+                '<div class="camera-widget__vector" style="position:absolute;left:8.33%;right:8.33%;top:8.33%;bottom:8.33%;background:#FFFFFF;clip-path:polygon(0 0,40% 0,40% 10%,10% 10%,10% 40%,0 40%,0 0,60% 0,100% 0,100% 40%,90% 40%,90% 10%,60% 10%,60% 0,0 60%,10% 60%,10% 90%,40% 90%,40% 100%,0 100%,0 60%,60% 90%,90% 90%,90% 60%,100% 60%,100% 100%,60% 100%);"></div>' +
+              '</div>' +
+            '</div>' +
           '</div>' +
         '</div>';
     }
