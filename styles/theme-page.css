@@ -3050,7 +3050,7 @@
     position: relative;
     background: transparent;
     border-radius: 32px;
-    overflow: visible;
+    overflow: hidden;
   }
   .dot-camera-motion__intro {
     position: absolute;
@@ -3092,13 +3092,13 @@
       border-radius: 32px;
       background: #FF7F24;
     }
-    79% {
+    60% {
       width: 120px;
       height: 120px;
       border-radius: 32px;
       background: #FF7F24;
     }
-    100% {
+    86%, 100% {
       width: 168px;
       height: 340px;
       border-radius: 32px;
@@ -3106,23 +3106,31 @@
     }
   }
   @keyframes dotCameraIntroOut {
-    0%, 79% {
+    0%, 58% {
       opacity: 1;
       transform: scale(1);
     }
-    91%, 100% {
+    70%, 100% {
       opacity: 0;
-      transform: scale(0.92);
+      transform: scale(1);
     }
   }
   @keyframes dotCameraWidgetIn {
-    0%, 81% {
+    0%, 60% {
       opacity: 0;
-      transform: scale(1.02);
+      transform: translate(-50%, -50%);
     }
-    100% {
+    86%, 100% {
       opacity: 1;
-      transform: scale(1);
+      transform: translate(-50%, -50%);
+    }
+  }
+  @keyframes dotCameraControlIn {
+    0%, 84% {
+      opacity: 0;
+    }
+    88%, 100% {
+      opacity: 1;
     }
   }
 
@@ -3131,18 +3139,20 @@
     position: absolute;
     width: 168px;
     height: 340px;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 32px;
     overflow: hidden;
     opacity: 1;
     isolation: isolate;
+    transform: translate(-50%, -50%);
   }
   .detail-stage .camera-widget-key-color-ver {
     opacity: 0;
     z-index: 10;
     animation: dotCameraWidgetIn 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: opacity;
   }
   .camera-widget__img {
     position: absolute;
@@ -3192,6 +3202,10 @@
     height: 36px;
     right: 20px;
     bottom: 24px;
+  }
+  .detail-stage .camera-widget__expand-button {
+    opacity: 0;
+    animation: dotCameraControlIn 8.2s linear forwards;
   }
   .camera-widget__expand-svg {
     display: block;
