@@ -99,7 +99,7 @@
       name: 'Camera (dot)',
       editSections: ['Page', 'Card globals'],
       role: 'dot-camera',
-      variant: { img: '/assets/dot-camera/camera.png' }
+      variant: {}
     },
     {
       name: 'Running coach (dot)',

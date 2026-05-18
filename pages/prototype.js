@@ -334,7 +334,7 @@ export default function PrototypePage() {
       <Script src="/app/atomics.js" strategy="beforeInteractive" />
       <Script src="/app/design-doc.js" strategy="beforeInteractive" />
       <Script src="/app/interaction-state.js" strategy="beforeInteractive" />
-      <Script src="/app/surface-layout.js?v=dot-camera-final-css-layer-inline-5" strategy="beforeInteractive" />
+      <Script src="/app/surface-layout.js?v=dot-camera-expand-svg-1" strategy="beforeInteractive" />
       <Script src="/app/settings.js" strategy="beforeInteractive" />
       <Script src="/app/canvas.js" strategy="beforeInteractive" />
       <Script src="/app/rules-renderer.js" strategy="beforeInteractive" />

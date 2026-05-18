@@ -3043,16 +3043,16 @@
     to { opacity: 1; }
   }
 
-  /* Camera (dot) shell: preserves the 1 -> 2 -> main UI detail motion. */
-  .dot-cam {
-    width: 164px;
-    height: 246px;
+  /* Camera (dot) motion wrapper. The final UI is only Camera_widget_key-color-ver. */
+  .dot-camera-motion {
+    width: 168px;
+    height: 340px;
     position: relative;
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     border-radius: 32px;
-    overflow: hidden;
+    overflow: visible;
   }
-  .dot-cam__intro {
+  .dot-camera-motion__intro {
     position: absolute;
     inset: 0;
     display: flex;
@@ -3062,12 +3062,12 @@
     opacity: 0;
     z-index: 5;
   }
-  .dot-cam__introIcon {
+  .dot-camera-motion__introIcon {
     width: 32px;
     height: 32px;
     display: block;
   }
-  .detail-stage .dot-cam {
+  .detail-stage .dot-camera-motion {
     width: 82px;
     height: 82px;
     background: #FF7F24;
@@ -3075,7 +3075,7 @@
     animation: dotCameraDetailShell 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     will-change: width, height, border-radius, background;
   }
-  .detail-stage .dot-cam__intro {
+  .detail-stage .dot-camera-motion__intro {
     opacity: 1;
     animation: dotCameraIntroOut 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -3102,7 +3102,7 @@
       width: 168px;
       height: 340px;
       border-radius: 32px;
-      background: rgba(255, 255, 255, 0.2);
+      background: transparent;
     }
   }
   @keyframes dotCameraIntroOut {
@@ -3137,11 +3137,11 @@
     border-radius: 32px;
     overflow: hidden;
     opacity: 1;
+    isolation: isolate;
   }
   .detail-stage .camera-widget-key-color-ver {
     opacity: 0;
     z-index: 10;
-    isolation: isolate;
     animation: dotCameraWidgetIn 8.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .camera-widget__img {
@@ -3150,9 +3150,11 @@
     height: 340px;
     left: 0;
     top: 0;
+    background-image: url("/assets/dot-gallery/image-114131.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
   }
   .camera-widget__bg-gradient {
     position: absolute;
@@ -3161,8 +3163,7 @@
     left: 0;
     top: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.6) 100%);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    z-index: 1;
   }
   .camera-widget__shot-button {
     position: absolute;
@@ -3170,6 +3171,7 @@
     height: 48px;
     left: calc(50% - 48px/2);
     bottom: 20px;
+    z-index: 2;
   }
   .camera-widget__shot-button-graphic {
     box-sizing: border-box;
@@ -3191,21 +3193,11 @@
     right: 20px;
     bottom: 24px;
   }
-  .camera-widget__expand-icon {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: calc(50% - 24px/2);
-    top: calc(50% - 24px/2);
-  }
-  .camera-widget__vector {
-    position: absolute;
-    left: 8.33%;
-    right: 8.33%;
-    top: 8.33%;
-    bottom: 8.33%;
-    background: #FFFFFF;
-    clip-path: polygon(0 0, 40% 0, 40% 10%, 10% 10%, 10% 40%, 0 40%, 0 0, 60% 0, 100% 0, 100% 40%, 90% 40%, 90% 10%, 60% 10%, 60% 0, 0 60%, 10% 60%, 10% 90%, 40% 90%, 40% 100%, 0 100%, 0 60%, 60% 90%, 90% 90%, 90% 60%, 100% 60%, 100% 100%, 60% 100%);
+  .camera-widget__expand-svg {
+    display: block;
+    width: 36px;
+    height: 36px;
+    filter: none;
   }
 
   header {

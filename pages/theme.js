@@ -91,10 +91,10 @@ export default function ThemePage() {
 
       <Script src="/typography-rules.js" strategy="beforeInteractive" />
       <Script src="/app/atomics.js" strategy="beforeInteractive" />
-      <Script src="/app/surface-layout.js?v=dot-camera-final-css-layer-inline-5" strategy="beforeInteractive" />
+      <Script src="/app/surface-layout.js?v=dot-camera-expand-svg-1" strategy="beforeInteractive" />
       <Script src="/app/dot-clock21-mask-calibrate.js?v=1" strategy="afterInteractive" />
       <Script src="/datasets/normalPreviewCards.js" strategy="beforeInteractive" />
-      <Script src="/datasets/dotPreviewCards.js?v=runpanel-frames-3" strategy="beforeInteractive" />
+      <Script src="/datasets/dotPreviewCards.js?v=dot-camera-no-old-image-1" strategy="beforeInteractive" />
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" strategy="beforeInteractive" />
       <Script src="/theme-logic.js" strategy="lazyOnload" />
     </>

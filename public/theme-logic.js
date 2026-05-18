@@ -2540,7 +2540,7 @@ document.getElementById('preview-bg-swatches')?.addEventListener('click', functi
     stage.innerHTML = html;
     
     // Reset state to idle
-    const cardEl = stage.querySelector('.dot-cam, .dot-card, .focus-block, .notif-card, .now-bar, .media-card, .progress-track');
+    const cardEl = stage.querySelector('.dot-camera-motion, .dot-card, .focus-block, .notif-card, .now-bar, .media-card, .progress-track');
     if (cardEl) cardEl.setAttribute('data-state', 'idle');
 
     // Detail controls: dot-time-matrix time scrubber
