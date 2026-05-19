@@ -91,7 +91,7 @@ export default function ThemePage() {
 
       <Script src="/typography-rules.js" strategy="beforeInteractive" />
       <Script src="/app/atomics.js" strategy="beforeInteractive" />
-      <Script src="/app/surface-layout.js?v=dot-music-css-layer-3" strategy="beforeInteractive" />
+      <Script src="/app/surface-layout.js?v=dot-music-second-layer-15" strategy="beforeInteractive" />
       <Script src="/app/dot-clock21-mask-calibrate.js?v=1" strategy="afterInteractive" />
       <Script src="/datasets/normalPreviewCards.js" strategy="beforeInteractive" />
       <Script src="/datasets/dotPreviewCards.js?v=dot-camera-no-old-image-1" strategy="beforeInteractive" />

@@ -3675,11 +3675,30 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
         }
       }, rect);
       var compactTitle = mv.compactTitle || '햇빛이 쨍쨍한\n날씨에 듣기 좋은\n곡을 찾아드릴게요';
+      var compactIconHtml = '' +
+        '<svg class="dot-music1__noteSvg" width="32" height="32" viewBox="-2 -2 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+          '<circle cx="19.85" cy="3.49" r="3.5" fill="#000000"/><circle cx="27.98" cy="3.49" r="3.5" fill="#000000"/><circle cx="35.66" cy="3.49" r="3.5" fill="#000000"/><circle cx="44.25" cy="3.49" r="3.5" fill="#000000"/><circle cx="52.39" cy="3.49" r="3.5" fill="#000000"/><circle cx="60.52" cy="3.49" r="3.5" fill="#000000"/>' +
+          '<circle cx="19.85" cy="11.62" r="3.5" fill="#000000"/><circle cx="27.98" cy="11.62" r="3.5" fill="#000000"/><circle cx="35.66" cy="11.62" r="3.5" fill="#000000"/><circle cx="44.25" cy="11.62" r="3.5" fill="#000000"/><circle cx="52.39" cy="11.62" r="3.5" fill="#000000"/><circle cx="60.52" cy="11.62" r="3.5" fill="#000000"/>' +
+          '<circle cx="19.85" cy="19.76" r="3.5" fill="#000000"/><circle cx="27.98" cy="19.76" r="3.5" fill="#000000"/><circle cx="35.66" cy="19.76" r="3.5" fill="#000000"/><circle cx="44.25" cy="19.76" r="3.5" fill="#000000"/><circle cx="52.39" cy="19.76" r="3.5" fill="#000000"/><circle cx="60.52" cy="19.76" r="3.5" fill="#000000"/>' +
+          '<circle cx="19.85" cy="28.80" r="3.5" fill="#000000"/><circle cx="60.52" cy="28.80" r="3.5" fill="#000000"/>' +
+          '<circle cx="19.85" cy="36.94" r="3.5" fill="#000000"/><circle cx="60.52" cy="36.94" r="3.5" fill="#000000"/>' +
+          '<circle cx="19.85" cy="45.18" r="3.5" fill="#000000"/><circle cx="60.52" cy="45.18" r="3.5" fill="#000000"/>' +
+          '<circle cx="3.49" cy="53.32" r="3.5" fill="#000000"/><circle cx="11.62" cy="53.32" r="3.5" fill="#000000"/><circle cx="19.85" cy="53.32" r="3.5" fill="#000000"/><circle cx="44.25" cy="53.32" r="3.5" fill="#000000"/><circle cx="52.39" cy="53.32" r="3.5" fill="#000000"/><circle cx="60.52" cy="53.32" r="3.5" fill="#000000"/>' +
+          '<circle cx="3.49" cy="61.45" r="3.5" fill="#000000"/><circle cx="11.62" cy="61.45" r="3.5" fill="#000000"/><circle cx="44.25" cy="61.45" r="3.5" fill="#000000"/><circle cx="52.39" cy="61.45" r="3.5" fill="#000000"/>' +
+        '</svg>';
       var compactHtml = '' +
         '<div class="dot-music1__player" aria-hidden="true">' +
           '<div class="dot-music1__singer-name">' + String(compactTitle).replace(/\n/g, '<br/>') + '</div>' +
           '<div class="dot-music1__iconBg"></div>' +
-          '<div class="dot-music1__musicIcon"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>' +
+          '<div class="dot-music1__musicIcon">' + compactIconHtml + '</div>' +
+        '</div>';
+      var expandedIconHtml = compactIconHtml.replace('dot-music1__noteSvg', 'dot-music1__secondNoteSvg');
+      var expandedHtml = '' +
+        '<div class="dot-music1__secondPlayer">' +
+          '<div class="dot-music1__secondIconBg">' +
+            '<div class="dot-music1__secondMusicIcon">' + expandedIconHtml + '</div>' +
+          '</div>' +
+          '<div class="dot-music1__secondTitle">검색중이에요</div>' +
         '</div>';
       var isTabRoot = window.currentSurfaceType === window.SURFACE_TYPES.TAB_ROOT;
       var orangeClass = isTabRoot ? ' is-orange' : '';
@@ -3688,53 +3707,8 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
           '<div class="dot-music1__compact dot-music1__compact--layout">' +
             compactHtml +
           '</div>' +
-          '<div class="dot-music1__expanded dot-music2 dot-music2--actions" aria-hidden="true">' +
-            '<div class="dot-music2__top">' +
-              '<div class="dot-music2__artistBlock">' +
-                '<div class="dot-music2__artist">' + artist + '</div>' +
-                '<div class="dot-music2__album">' + album + '</div>' +
-              '</div>' +
-              '<div class="dot-music2__btnUnit" aria-hidden="true">' +
-                '<div class="dot-music2__btn">' +
-                  '<svg width="18" height="18" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                    '<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.53L12 21.35Z" fill="#000000"/>' +
-                  '</svg>' +
-                '</div>' +
-                '<div class="dot-music2__btn">' +
-                  '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-                    '<path d="M3 5.5h18v13H3v-13Z" stroke="#000000" stroke-width="2" fill="none" />' +
-                    '<path d="M5 17c1.9 0 3.6.8 4.8 2" stroke="#000000" stroke-width="2" stroke-linecap="round" fill="none" />' +
-                    '<path d="M5 13.5c3.1 0 5.8 1.3 7.8 3.2" stroke="#000000" stroke-width="2" stroke-linecap="round" fill="none" />' +
-                  '</svg>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-            '<div class="dot-music__bottom dot-music2__bottom">' +
-              '<div class="dot-music2__playRow">' +
-                '<div class="dot-music__song">' + song + '</div>' +
-                '<div class="dot-music2__eq" aria-hidden="true">' +
-                  '<div class="dot-music2__eqCol is-tall">' +
-                    '<span></span><span></span><span></span><span></span><span></span>' +
-                  '</div>' +
-                  '<div class="dot-music2__eqCol is-mid">' +
-                    '<span></span><span></span><span></span>' +
-                  '</div>' +
-                  '<div class="dot-music2__eqCol is-small">' +
-                    '<span></span>' +
-                  '</div>' +
-                '</div>' +
-              '</div>' +
-              '<div class="dot-music__timeInfo dot-music__timeInfo--wide">' +
-                '<div class="dot-music__timeRow dot-music__timeRow--wide">' +
-                  '<div class="dot-music__time dot-music__time--current">' + current + '</div>' +
-                  '<div class="dot-music__time dot-music__time--remaining">' + remaining + '</div>' +
-                '</div>' +
-                '<div class="dot-music__bar dot-music__bar--wide" style="--bar-w:' + expandedBarW + 'px;--bar-track:' + expandedBarTrack + 'px;">' +
-                  '<div class="dot-music__barFill" aria-hidden="true"></div>' +
-                  '<div class="dot-music__barTrack" aria-hidden="true"></div>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
+          '<div class="dot-music1__expanded" aria-hidden="true">' +
+            expandedHtml +
           '</div>' +
           '<div class="dot-music1__icon" aria-hidden="true">' + iconHtml + '</div>' +
         '</div>';

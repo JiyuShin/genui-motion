@@ -334,7 +334,7 @@ export default function PrototypePage() {
       <Script src="/app/atomics.js" strategy="beforeInteractive" />
       <Script src="/app/design-doc.js" strategy="beforeInteractive" />
       <Script src="/app/interaction-state.js" strategy="beforeInteractive" />
-      <Script src="/app/surface-layout.js?v=dot-music-css-layer-3" strategy="beforeInteractive" />
+      <Script src="/app/surface-layout.js?v=dot-music-second-layer-15" strategy="beforeInteractive" />
       <Script src="/app/settings.js" strategy="beforeInteractive" />
       <Script src="/app/canvas.js" strategy="beforeInteractive" />
       <Script src="/app/rules-renderer.js" strategy="beforeInteractive" />

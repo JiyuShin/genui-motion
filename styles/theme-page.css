@@ -429,7 +429,53 @@
     border-radius: 32px;
     overflow: hidden;
   }
+  .dot-music1__player::after {
+    content: '검색중이에요';
+    position: absolute;
+    width: 78px;
+    height: 18px;
+    left: 50px;
+    top: 128px;
+    font-family: 'Pretendard', var(--font), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    background: linear-gradient(90deg, #000000 0%, #7F7F7F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dot-music1__player::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(137.88deg, #FF7F24 2.12%, #FFCAA4 94.17%);
+    background-size: 240% 240%;
+    background-position: 0% 50%;
+    border-radius: 32px;
+    pointer-events: none;
+  }
+  .detail-stage .dot-music1__compact--layout .dot-music1__player {
+    animation: none;
+  }
+  .detail-stage .dot-music1__compact--layout .dot-music1__player::before {
+    animation:
+      dotMusicSecondBgIn 12s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+      dotMusicSecondBgFlow 12s linear 5s infinite;
+  }
+  .detail-stage .dot-music1__compact--layout .dot-music1__player::after {
+    animation:
+      dotMusicSecondTextIn 12s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+      dotMusicSecondTitleGradient 2.2s linear 6.6s infinite;
+  }
   .dot-music1__singer-name {
+    position: relative;
+    z-index: 1;
     flex: none;
     order: 0;
     width: 119px;
@@ -451,8 +497,14 @@
   .detail-stage .dot-music1__singer-name {
     animation: dotMusicSingerGradient 2.2s linear 3s infinite;
   }
+  .detail-stage .dot-music1__compact--layout .dot-music1__singer-name {
+    animation:
+      dotMusicSingerGradient 2.2s linear 3s infinite,
+      dotMusicFirstTextOut 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
   .dot-music1__iconBg {
     position: absolute;
+    z-index: 1;
     width: 53.86px;
     height: 53.86px;
     left: 24px;
@@ -462,95 +514,126 @@
   }
   .dot-music1__musicIcon {
     position: absolute;
+    z-index: 2;
     width: 24.87px;
     height: 24.62px;
     left: 38.31px;
     top: 108.45px;
   }
-  .dot-music1__musicIcon span {
-    position: absolute;
-    width: 2.71px;
-    height: 2.71px;
-    background: #000000;
-    border-radius: 83.3167px;
+  .dot-music1__noteSvg {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
-  .dot-music1__musicIcon span:nth-child(1) { left: 38.28%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(2) { left: 12.71%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(3) { left: 76.41%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(4) { left: 63.69%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(5) { left: 89.12%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(6) { left: 38.28%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(7) { left: 63.69%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(8) { left: 89.12%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(9) { left: 38.28%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(10) { left: 12.71%; top: 89%; }
-  .dot-music1__musicIcon span:nth-child(11) { left: 76.41%; top: 89%; }
-  .dot-music1__musicIcon span:nth-child(12) { left: 63.69%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(13) { left: 89.12%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(14) { left: 25.57%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(15) { left: 0%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(16) { left: 63.7%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(17) { left: 50.98%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(18) { left: 76.41%; top: 0%; }
-  .dot-music1__musicIcon span:nth-child(19) { left: 25.57%; top: 38.14%; }
-  .dot-music1__musicIcon span:nth-child(20) { left: 89.12%; top: 38.14%; }
-  .dot-music1__musicIcon span:nth-child(21) { left: 25.57%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(22) { left: 50.98%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(23) { left: 76.41%; top: 25.43%; }
-  .dot-music1__musicIcon span:nth-child(24) { left: 25.57%; top: 63.57%; }
-  .dot-music1__musicIcon span:nth-child(25) { left: 89.12%; top: 63.57%; }
-  .dot-music1__musicIcon span:nth-child(26) { left: 25.57%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(27) { left: 89.12%; top: 76.28%; }
-  .dot-music1__musicIcon span:nth-child(28) { left: 25.57%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(29) { left: 0%; top: 89%; }
-  .dot-music1__musicIcon span:nth-child(30) { left: 63.7%; top: 89%; }
-  .dot-music1__musicIcon span:nth-child(31) { left: 50.98%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(32) { left: 76.41%; top: 12.71%; }
-  .dot-music1__musicIcon span:nth-child(33) { left: 25.57%; top: 50.86%; }
-  .dot-music1__musicIcon span:nth-child(34) { left: 89.12%; top: 50.86%; }
-  .detail-stage .dot-music1__musicIcon span {
-    animation: dotMusicIconDotSweep 1.8s steps(1, end) 3s infinite;
+  .dot-music1__noteSvg circle {
+    fill: #000000;
+    transform-box: fill-box;
+    transform-origin: center;
   }
-  .detail-stage .dot-music1__musicIcon span:nth-child(14) { animation-delay: 3.000s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(28) { animation-delay: 3.025s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(1) { animation-delay: 3.050s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(21) { animation-delay: 3.075s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(9) { animation-delay: 3.100s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(17) { animation-delay: 3.125s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(19) { animation-delay: 3.150s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(6) { animation-delay: 3.175s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(31) { animation-delay: 3.200s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(4) { animation-delay: 3.225s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(15) { animation-delay: 3.250s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(33) { animation-delay: 3.275s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(22) { animation-delay: 3.300s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(12) { animation-delay: 3.325s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(18) { animation-delay: 3.350s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(29) { animation-delay: 3.375s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(2) { animation-delay: 3.400s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(24) { animation-delay: 3.425s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(7) { animation-delay: 3.450s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(32) { animation-delay: 3.475s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(5) { animation-delay: 3.500s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(10) { animation-delay: 3.525s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(26) { animation-delay: 3.550s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(23) { animation-delay: 3.575s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(13) { animation-delay: 3.600s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(8) { animation-delay: 3.625s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(20) { animation-delay: 3.650s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(16) { animation-delay: 3.675s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(34) { animation-delay: 3.700s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(30) { animation-delay: 3.725s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(3) { animation-delay: 3.750s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(25) { animation-delay: 3.775s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(11) { animation-delay: 3.800s; }
-  .detail-stage .dot-music1__musicIcon span:nth-child(27) { animation-delay: 3.825s; }
+  .detail-stage .dot-music1__noteSvg circle {
+    animation: dotMusicIconDotSweep 1.8s steps(1, end) 3s 1 forwards;
+  }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(1) { animation-delay: 3.000s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(7) { animation-delay: 3.018s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(2) { animation-delay: 3.036s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(3) { animation-delay: 3.054s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(8) { animation-delay: 3.072s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(13) { animation-delay: 3.090s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(9) { animation-delay: 3.108s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(14) { animation-delay: 3.126s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(4) { animation-delay: 3.144s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(19) { animation-delay: 3.162s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(15) { animation-delay: 3.180s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(10) { animation-delay: 3.198s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(5) { animation-delay: 3.216s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(21) { animation-delay: 3.234s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(25) { animation-delay: 3.252s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(16) { animation-delay: 3.270s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(11) { animation-delay: 3.288s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(6) { animation-delay: 3.306s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(31) { animation-delay: 3.324s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(26) { animation-delay: 3.342s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(23) { animation-delay: 3.360s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(12) { animation-delay: 3.378s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(17) { animation-delay: 3.396s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(32) { animation-delay: 3.414s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(27) { animation-delay: 3.432s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(18) { animation-delay: 3.450s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(20) { animation-delay: 3.468s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(22) { animation-delay: 3.486s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(28) { animation-delay: 3.504s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(33) { animation-delay: 3.522s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(24) { animation-delay: 3.540s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(29) { animation-delay: 3.558s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(34) { animation-delay: 3.576s; }
+  .detail-stage .dot-music1__noteSvg circle:nth-child(30) { animation-delay: 3.594s; }
+  .detail-stage .dot-music1__compact--layout .dot-music1__iconBg {
+    animation: dotMusicFirstIconBgToSecond 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .detail-stage .dot-music1__compact--layout .dot-music1__musicIcon {
+    animation: dotMusicFirstIconToSecond 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
   .dot-music1__expanded {
     inset: 0;
-    width: 340px;
+    width: 168px;
     height: 168px;
     opacity: 0;
     pointer-events: none;
+  }
+  .dot-music1__secondPlayer {
+    position: relative;
+    width: 168px;
+    height: 168px;
+    background: linear-gradient(137.88deg, #FF7F24 2.12%, #FFCAA4 94.17%);
+    border-radius: 32px;
+    overflow: hidden;
+  }
+  .dot-music1__secondIconBg {
+    position: absolute;
+    width: 96.77px;
+    height: 96.77px;
+    left: 35.08px;
+    top: 19.54px;
+    background: linear-gradient(306.8deg, #FF6A00 -2.23%, #FFCE73 90.04%);
+    border-radius: 149.684px;
+    opacity: 0;
+  }
+  .dot-music1__secondMusicIcon {
+    position: absolute;
+    width: 44.69px;
+    height: 44.23px;
+    left: 24.98px;
+    top: 25.99px;
+    opacity: 0;
+  }
+  .dot-music1__secondNoteSvg {
+    display: block;
+    width: 44.69px;
+    height: 44.23px;
+  }
+  .dot-music1__secondNoteSvg circle {
+    fill: #000000;
+  }
+  .dot-music1__secondTitle {
+    position: absolute;
+    width: 78px;
+    height: 18px;
+    left: 50px;
+    top: 128px;
+    font-family: 'Pretendard', var(--font), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #000000 0%, #7F7F7F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .detail-stage .dot-music1__secondTitle {
+    animation: dotMusicSecondTitleGradient 2.2s linear 6.6s infinite;
   }
   .dot-music1__icon {
     position: absolute;
@@ -598,20 +681,20 @@
     background: #000000;
   }
   .detail-stage .dot-music1 {
-    width: 340px;
-    clip-path: inset(0 172px 0 0 round 32px);
-    animation: dotMusicRevealCard 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    will-change: clip-path;
+    width: 168px;
+    clip-path: inset(0 0 0 0 round 32px);
+    animation: dotMusicRevealCard 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: width, clip-path;
   }
   .detail-stage .dot-music1__compact {
-    width: 120px;
-    animation: dotMusicCompactOut 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    width: 168px;
+    animation: dotMusicCompactOut 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-music1__expanded {
-    animation: dotMusicExpandedIn 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: dotMusicExpandedIn 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-music1__icon {
-    animation: dotMusicIconIn 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: dotMusicIconIn 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .detail-stage .dot-music1__icon .dot-music3__noteSvg circle {
     opacity: 0;
@@ -778,37 +861,35 @@
     animation: dotMusicBarTrackGrow 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   @keyframes dotMusicRevealCard {
-    0%, 75% { clip-path: inset(0 172px 0 0 round 32px); }
-    100% { clip-path: inset(0 0 0 0 round 32px); }
+    0%, 96% {
+      width: 168px;
+      clip-path: inset(0 0 0 0 round 32px);
+    }
+    100% {
+      width: 340px;
+      clip-path: inset(0 0 0 0 round 32px);
+    }
   }
   @keyframes dotMusicCompactOut {
-    0%, 75% {
+    0%, 96% {
       opacity: 1;
       transform: translateX(0) scale(1);
     }
     100% {
       opacity: 0;
-      transform: translateX(-8px) scale(0.98);
+      transform: translateX(0) scale(1);
     }
   }
   @keyframes dotMusicExpandedIn {
-    0%, 75% {
+    0%, 100% {
       opacity: 0;
-      transform: translateX(6px);
-    }
-    84%, 94% {
-      opacity: 1;
       transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-6px) scale(0.985);
     }
   }
   @keyframes dotMusicIconIn {
-    0%, 90% {
+    0%, 96% {
       opacity: 0;
-      transform: translateX(8px) scale(0.985);
+      transform: translateX(0) scale(1);
     }
     100% {
       opacity: 1;
@@ -835,6 +916,74 @@
       transform: translateX(0) scale(1);
     }
   }
+  @keyframes dotMusicFirstTextOut {
+    0%, 41.67% {
+      opacity: 1;
+    }
+    52%, 100% {
+      opacity: 0;
+    }
+  }
+  @keyframes dotMusicSecondBgIn {
+    0%, 41.67% { opacity: 0; }
+    60%, 96% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes dotMusicSecondBgFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  @keyframes dotMusicSecondTextIn {
+    0%, 55% {
+      opacity: 0;
+    }
+    64%, 96% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes dotMusicFirstIconBgToSecond {
+    0%, 41.67% {
+      width: 53.86px;
+      height: 53.86px;
+      left: 24px;
+      top: 94.14px;
+      border-radius: 83.3167px;
+      background: #FF9950;
+      opacity: 1;
+    }
+    60%, 100% {
+      width: 96.77px;
+      height: 96.77px;
+      left: 35.08px;
+      top: 19.54px;
+      border-radius: 149.684px;
+      background: linear-gradient(306.8deg, #FF6A00 -2.23%, #FFCE73 90.04%);
+      opacity: 1;
+    }
+  }
+  @keyframes dotMusicFirstIconToSecond {
+    0%, 41.67% {
+      width: 24.87px;
+      height: 24.62px;
+      left: 38.31px;
+      top: 108.45px;
+      opacity: 1;
+    }
+    60%, 100% {
+      width: 44.69px;
+      height: 44.23px;
+      left: 60.06px;
+      top: 45.53px;
+      opacity: 1;
+    }
+  }
   @keyframes dotMusicSingerGradient {
     0% {
       background-image: repeating-linear-gradient(105.31deg, #000000 0px, #000000 44px, rgba(79, 79, 79, 0.3) 64px, #000000 88px, #000000 119px);
@@ -845,6 +994,18 @@
       background-image: repeating-linear-gradient(105.31deg, #000000 0px, #000000 44px, rgba(79, 79, 79, 0.3) 64px, #000000 88px, #000000 119px);
       background-position: 119px 50%;
       background-size: 119px 100%;
+    }
+  }
+  @keyframes dotMusicSecondTitleGradient {
+    0% {
+      background-image: repeating-linear-gradient(90deg, #000000 0px, #000000 28px, #7F7F7F 46px, #000000 78px);
+      background-position: 0 50%;
+      background-size: 78px 100%;
+    }
+    100% {
+      background-image: repeating-linear-gradient(90deg, #000000 0px, #000000 28px, #7F7F7F 46px, #000000 78px);
+      background-position: 78px 50%;
+      background-size: 78px 100%;
     }
   }
   @keyframes dotMusicIconDotSweep {
