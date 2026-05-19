@@ -452,13 +452,13 @@
   .dot-music1__player::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -64px;
     opacity: 0;
     background: linear-gradient(137.88deg, #FF7F24 2.12%, #FFCAA4 94.17%);
-    background-size: 240% 240%;
-    background-position: 0% 50%;
     border-radius: 32px;
     pointer-events: none;
+    transform: translate3d(-18px, -18px, 0);
+    will-change: opacity, transform;
   }
   .detail-stage .dot-music1__compact--layout .dot-music1__player {
     animation: none;
@@ -466,7 +466,7 @@
   .detail-stage .dot-music1__compact--layout .dot-music1__player::before {
     animation:
       dotMusicSecondBgIn 12s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-      dotMusicSecondBgFlow 12s linear 5s infinite;
+      dotMusicSecondBgFlow 9s linear 5s forwards;
   }
   .detail-stage .dot-music1__compact--layout .dot-music1__player::after {
     animation:
@@ -931,10 +931,10 @@
   }
   @keyframes dotMusicSecondBgFlow {
     0% {
-      background-position: 0% 50%;
+      transform: translate3d(-18px, -18px, 0);
     }
     100% {
-      background-position: 100% 50%;
+      transform: translate3d(18px, 18px, 0);
     }
   }
   @keyframes dotMusicSecondTextIn {
