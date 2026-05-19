@@ -3836,7 +3836,24 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
             '<div class="dot-music3__title">' + safeTitle + '</div>' +
           '</div>' +
           '<div class="dot-music__bottom dot-music3__bottom">' +
-            '<div class="dot-music3__name">' + subtitle3 + '</div>' +
+            '<div class="dot-music3__playRow">' +
+              '<div class="dot-music3__name">Concierto</div>' +
+              '<div class="dot-music2__eq dot-music3__eq" aria-hidden="true">' +
+                '<div class="dot-music2__eqCol is-tall">' +
+                  '<span></span><span></span><span></span><span></span><span></span>' +
+                '</div>' +
+                '<div class="dot-music2__eqCol is-mid">' +
+                  '<span></span><span></span><span></span>' +
+                '</div>' +
+                '<div class="dot-music2__eqCol is-small">' +
+                  '<span></span>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="dot-music__timeRow dot-music3__timeRow">' +
+              '<div class="dot-music__time dot-music__time--current">0:40</div>' +
+              '<div class="dot-music__time dot-music__time--remaining">-1:10</div>' +
+            '</div>' +
             '<div class="dot-music__bar dot-music__bar--wide dot-music3__bar" style="--bar-w:' + barW3 + 'px;--bar-track:' + barTrack3 + 'px;">' +
               '<div class="dot-music__barFill" aria-hidden="true"></div>' +
               '<div class="dot-music__barTrack" aria-hidden="true"></div>' +
