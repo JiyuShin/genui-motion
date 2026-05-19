@@ -3674,28 +3674,19 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
           barTrack: expandedBarTrack
         }
       }, rect);
+      var compactTitle = mv.compactTitle || '햇빛이 쨍쨍한\n날씨에 듣기 좋은\n곡을 찾아드릴게요';
+      var compactHtml = '' +
+        '<div class="dot-music1__player" aria-hidden="true">' +
+          '<div class="dot-music1__singer-name">' + String(compactTitle).replace(/\n/g, '<br/>') + '</div>' +
+          '<div class="dot-music1__iconBg"></div>' +
+          '<div class="dot-music1__musicIcon"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>' +
+        '</div>';
       var isTabRoot = window.currentSurfaceType === window.SURFACE_TYPES.TAB_ROOT;
       var orangeClass = isTabRoot ? ' is-orange' : '';
       return '' +
         '<div class="dot-card dot-music dot-music1' + orangeClass + '" data-state="' + (mv.state || 'idle') + '">' +
-          '<div class="dot-music1__compact">' +
-            '<div class="dot-music1__top">' +
-              '<div class="dot-music1__artist">' + artist + '</div>' +
-              '<div class="dot-music1__album">' + album + '</div>' +
-            '</div>' +
-            '<div class="dot-music__bottom">' +
-              '<div class="dot-music__song">' + song + '</div>' +
-              '<div class="dot-music__timeInfo">' +
-                '<div class="dot-music__timeRow">' +
-                  '<div class="dot-music__time dot-music__time--current">' + current + '</div>' +
-                  '<div class="dot-music__time dot-music__time--remaining">' + remaining + '</div>' +
-                '</div>' +
-                '<div class="dot-music__bar" style="--bar-w:' + barW + 'px;--bar-track:' + barTrack + 'px;">' +
-                  '<div class="dot-music__barFill" aria-hidden="true"></div>' +
-                  '<div class="dot-music__barTrack" aria-hidden="true"></div>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
+          '<div class="dot-music1__compact dot-music1__compact--layout">' +
+            compactHtml +
           '</div>' +
           '<div class="dot-music1__expanded dot-music2 dot-music2--actions" aria-hidden="true">' +
             '<div class="dot-music2__top">' +
