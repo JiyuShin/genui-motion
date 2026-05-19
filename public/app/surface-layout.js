@@ -3663,7 +3663,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
       var barTrack = mv.barTrack != null ? mv.barTrack : 31.48;
       var expandedBarW = mv.expandedBarFull != null ? mv.expandedBarFull : 292;
       var expandedBarTrack = mv.expandedBarTrack != null ? mv.expandedBarTrack : 77;
-      var iconTitle = mv.iconTitle || '오늘 날씨에 딱 맞는\n플레이리스트';
+      var iconTitle = mv.iconTitle || '오늘 날씨엔 부드럽고 상쾌한\nConcierto가 좋을거같아요!';
       var iconSubtitle = mv.iconSubtitle || 'Jim Hall - Concierto';
       var iconHtml = window.renderAtomicForRole({
         role: 'dot-music-1x2-icon',
@@ -3778,7 +3778,7 @@ window.renderAtomicForRole = function renderAtomicForRole(comp, rect) {
 
     case 'dot-music-1x2-icon': {
       var mv3 = (comp && comp.variant) || {};
-      var title3 = (mv3.title || '오늘 날씨에 딱 맞는\n플레이리스트');
+      var title3 = (mv3.title || '오늘 날씨엔 부드럽고 상쾌한\nConcierto가 좋을거같아요!');
       var subtitle3 = (mv3.subtitle || 'Jim Hall - Concierto');
       var barW3 = mv3.barFull != null ? mv3.barFull : 292;
       var barTrack3 = mv3.barTrack != null ? mv3.barTrack : 77;
